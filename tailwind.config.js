@@ -8,6 +8,7 @@ module.exports = {
       text: '#205072',
       primary: '#FE9DCF',
       secondary: '#ECDEE7',
+      wrongred: '#FF0000',
     },
   },
   plugins: [],

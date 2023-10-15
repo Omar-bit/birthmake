@@ -28,7 +28,7 @@ export default function App() {
         <StatusBar animated={true} />
         <UserContext.Provider value={{ user, setUser }}>
           <NavigationContainer>
-            {!true && (
+            {!user && (
               <Stack.Navigator>
                 <Stack.Screen
                   name='Home'
@@ -48,7 +48,7 @@ export default function App() {
                 />
               </Stack.Navigator>
             )}
-            {true && (
+            {user && (
               <Stack.Navigator>
                 <Stack.Screen
                   name='Home'

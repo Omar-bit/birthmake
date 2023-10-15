@@ -17,7 +17,7 @@ const Signup = ({ navigation }) => {
   const auth = firebaseAuth;
   async function signup() {
     //error-valid
-    if (isValidEmail(email) || !email) {
+    if (!isValidEmail(email) || !email) {
       Toast.show({
         type: 'error',
         text1: 'Echec de connection',

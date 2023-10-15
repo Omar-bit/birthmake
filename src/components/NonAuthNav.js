@@ -4,7 +4,7 @@ import { Ionicons } from '@expo/vector-icons';
 const NonAuthNav = ({ back }) => {
   return (
     <View
-      className=' flex-row items-center p-5  h-[22vh]'
+      className=' flex-row items-center p-5  h-[24vh]'
       style={{ backgroundColor: 'white' }}
     >
       <Ionicons name='arrow-back' size={24} color='black' onPress={back} />

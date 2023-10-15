@@ -17,7 +17,7 @@ const Login = ({ navigation }) => {
   const auth = firebaseAuth;
   async function login() {
     //error-valid
-    if (isValidEmail(email) || email === '') {
+    if (!isValidEmail(email) || email === '') {
       Toast.show({
         type: 'error',
         text1: 'err de connection',
@@ -28,18 +28,20 @@ const Login = ({ navigation }) => {
 
     try {
       const res = await signInWithEmailAndPassword(auth, email, password);
-      console.log(res);
       Toast.show({
         type: 'success',
         text1: 'welcome back',
         text2: res,
       });
+      setUser(res);
     } catch (error) {
       Toast.show({
         type: 'error',
         text1: 'Echec de connection',
         text2: 'email ou mot de passe est incorrect',
       });
+    } finally {
+      console.log('zebi');
     }
   }
   function isValidEmail(email) {

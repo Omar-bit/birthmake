@@ -8,7 +8,7 @@ const Home = ({ navigation }) => {
         <Image
           source={require('./../assets/pregnantWomenHomePage2.png')}
           className=' self-start w-[80vw] h-[70vh]'
-          style={{ resizeMode: 'stretch', alignSelf: 'start' }}
+          style={{ resizeMode: 'stretch' }}
         />
       </View>
       <View className='flex justify-start gap-y-32 items-center h-[75vh]  '>

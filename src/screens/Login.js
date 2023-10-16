@@ -1,4 +1,11 @@
-import { View, Text, Image, TouchableOpacity, TextInput } from 'react-native';
+import {
+  View,
+  Text,
+  Image,
+  TouchableOpacity,
+  TextInput,
+  ScrollView,
+} from 'react-native';
 import React from 'react';
 import { Ionicons } from '@expo/vector-icons';
 import NonAuthNav from '../components/NonAuthNav';
@@ -49,7 +56,7 @@ const Login = ({ navigation }) => {
     return emailRegex.test(email);
   }
   return (
-    <View className='flex-1' style={{ backgroundColor: 'white' }}>
+    <ScrollView className='flex-1  ' style={{ backgroundColor: 'white' }}>
       <NonAuthNav back={navigation.goBack} />
       <View
         className=' mt-20 h-[50vh]   items-center  gap-14     '
@@ -126,7 +133,7 @@ const Login = ({ navigation }) => {
           </View>
 
           <TouchableOpacity
-            className=' bg-primary w-full py-4 rounded-xl -mt-24 justify-center items-center'
+            className=' bg-primary w-full  py-4 rounded-xl -mt-24 justify-center items-center'
             onPress={login}
           >
             <Text className=' text-[#ffff] text-md font-bold'>
@@ -136,7 +143,7 @@ const Login = ({ navigation }) => {
         </View>
       </View>
       <Toast />
-    </View>
+    </ScrollView>
   );
 };
 

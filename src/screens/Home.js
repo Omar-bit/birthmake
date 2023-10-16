@@ -19,13 +19,13 @@ const Home = ({ navigation }) => {
         <View className='gap-y-10  items-start h-[10vh]  '>
           <TouchableOpacity
             onPress={() => navigation.navigate('Articles')}
-            className='w-[250px] py-3 justify-center items-center bg-primary rounded-md'
+            className='w-[250px] py-3 h-12 justify-center items-center bg-primary rounded-md'
           >
             <Text className=' text-[#ffff] text-lg'>Le Jour J </Text>
           </TouchableOpacity>
           <TouchableOpacity
             onPress={() => navigation.navigate('Evaluation')}
-            className='w-[250px] py-3 justify-center items-center bg-primary rounded-md'
+            className='w-[250px] py-3 h-12 justify-center items-center bg-primary rounded-md'
           >
             <Text className=' text-[#ffff] text-lg'>Évaluez-nous</Text>
           </TouchableOpacity>

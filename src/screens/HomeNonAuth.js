@@ -1,13 +1,18 @@
 import { View, Text, Image, TouchableOpacity } from 'react-native';
 import React from 'react';
+import ToggleLang from './../components/ToggleLang';
+
 const HomeNonAuth = ({ navigation }) => {
   return (
-    <View className=' py-5 h-[100vh]   items-center  justify-around bg-[#ffff]   '>
-      <Image
-        source={require('./../assets/stars.png')}
-        className=' '
-        style={{ resizeMode: 'stretch' }}
-      />
+    <View className='flex-1 py-5 h-[100vh]   items-center  justify-around bg-[#ffff]   '>
+      <View className='w-full flex-row items-center justify-between px-5'>
+        <Image
+          source={require('./../assets/stars.png')}
+          className=' '
+          style={{ resizeMode: 'stretch', width: 95, height: 50 }}
+        />
+        <ToggleLang />
+      </View>
       <Text className='text-text text-2xl font-semibold'>BirthMate</Text>
       <Text className='text-[#9D3284] text-xl z-20 '>
         Votre parcours vers la maternité

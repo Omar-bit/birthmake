@@ -21,11 +21,12 @@ export const UserContext = React.createContext();
 
 export default function App() {
   const [user, setUser] = React.useState(null);
+  const [lang, setLang] = React.useState('fr');
 
   return (
     <SafeAreaView style={styles.container}>
       <StatusBar animated={true} />
-      <UserContext.Provider value={{ user, setUser }}>
+      <UserContext.Provider value={{ user, setUser, lang, setLang }}>
         <NavigationContainer>
           {!user && (
             <Stack.Navigator>

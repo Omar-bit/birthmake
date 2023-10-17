@@ -23,60 +23,58 @@ export default function App() {
   const [user, setUser] = React.useState(null);
 
   return (
-    <KeyboardAvoidingView style={{ flex: 1 }} enabled={true} behavior='padding'>
-      <SafeAreaView style={styles.container}>
-        <StatusBar animated={true} />
-        <UserContext.Provider value={{ user, setUser }}>
-          <NavigationContainer>
-            {!user && (
-              <Stack.Navigator>
-                <Stack.Screen
-                  name='Home'
-                  component={HomeNonAuth}
-                  options={{ headerShown: false }}
-                />
+    <SafeAreaView style={styles.container}>
+      <StatusBar animated={true} />
+      <UserContext.Provider value={{ user, setUser }}>
+        <NavigationContainer>
+          {!user && (
+            <Stack.Navigator>
+              <Stack.Screen
+                name='Home'
+                component={HomeNonAuth}
+                options={{ headerShown: false }}
+              />
 
-                <Stack.Screen
-                  name='Login'
-                  component={Login}
-                  options={{ headerShown: false }}
-                />
-                <Stack.Screen
-                  name='Signup'
-                  component={Signup}
-                  options={{ headerShown: false }}
-                />
-              </Stack.Navigator>
-            )}
-            {user && (
-              <Stack.Navigator>
-                <Stack.Screen
-                  name='Home'
-                  component={Home}
-                  options={{ headerShown: false }}
-                />
+              <Stack.Screen
+                name='Login'
+                component={Login}
+                options={{ headerShown: false }}
+              />
+              <Stack.Screen
+                name='Signup'
+                component={Signup}
+                options={{ headerShown: false }}
+              />
+            </Stack.Navigator>
+          )}
+          {user && (
+            <Stack.Navigator>
+              <Stack.Screen
+                name='Home'
+                component={Home}
+                options={{ headerShown: false }}
+              />
 
-                <Stack.Screen
-                  name='Articles'
-                  component={Articles}
-                  options={{ headerShown: false }}
-                />
-                <Stack.Screen
-                  name='Article'
-                  component={Article}
-                  options={{ headerShown: false }}
-                />
-                <Stack.Screen
-                  name='Evaluation'
-                  component={Evaluation}
-                  options={{ headerShown: false }}
-                />
-              </Stack.Navigator>
-            )}
-          </NavigationContainer>
-        </UserContext.Provider>
-      </SafeAreaView>
-    </KeyboardAvoidingView>
+              <Stack.Screen
+                name='Articles'
+                component={Articles}
+                options={{ headerShown: false }}
+              />
+              <Stack.Screen
+                name='Article'
+                component={Article}
+                options={{ headerShown: false }}
+              />
+              <Stack.Screen
+                name='Evaluation'
+                component={Evaluation}
+                options={{ headerShown: false }}
+              />
+            </Stack.Navigator>
+          )}
+        </NavigationContainer>
+      </UserContext.Provider>
+    </SafeAreaView>
   );
 }
 

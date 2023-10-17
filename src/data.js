@@ -2,6 +2,7 @@ export default data = [
   {
     id: 0,
     title: 'PREMIERES CONTRACTIONS',
+    video: `require('./assets/video1.mp4')`,
     content: [
       `
   Les contractions pendant la grossesse peuvent varier en intensité et en fréquence. Il est important de reconnaître les différences entre les contractions normales et celles qui marquent le début du travail. Voici quelques signes distinctifs pour les contractions de début de travail :
@@ -26,6 +27,7 @@ https://www.mayoclinic.org/healthy-lifestyle/pregnancy-week-by-week/in-degree/la
   {
     id: 1,
     title: 'L’ACCOUCHEMENT ETAPES PAR ETAPES',
+    video: `require('./assets/video1.mp4')`,
     content: [
       `Eléments de surveillance à la salle du travail : 
 Lors de l'accouchement, l'équipe médicale suit de près plusieurs paramètres, notamment lors de l'Électrocardiographie Fœtale Continue (ERCF) et de la tocographie externe. Pendant cette période cruciale, une sage-femme ou un professionnel de la santé surveille de près l'ouverture du col de l'utérus, la position et la présentation du bébé, l'intensité et la fréquence des contractions utérines, ainsi que le rythme cardiaque fœtal. Le monitoring est réalisé à l'aide de deux capteurs placés sur votre abdomen, permettant ainsi de suivre en temps réel le rythme cardiaque du fœtus et de mesurer la régularité des contractions. Le mode de monitoring, qu'il soit continu ou intermittent, est adapté en fonction du contexte médical spécifique.
@@ -60,6 +62,7 @@ La surveillance rapprochée de la mère est recommandée pendant les deux heures
   {
     id: 2,
     title: 'PREPARATION A L’ACCOUCHEMENT',
+    video: `require('./assets/video1.mp4')`,
     content: [
       `La préparation à l'accouchement au sein du centre de maternité du CHU Farhat Hached à Sousse commence par l'enseignement de techniques de respiration essentielles pour aider les futures mamans à gérer le travail dans notre centre de PREPARATION A L’ACCOUCHEMENT, Pendant le travail et l'accouchement, la respiration joue un rôle essentiel pour aider les femmes à gérer la douleur et à rester calmes. Les méthodes de respiration sont des outils puissants pour favoriser la relaxation et maintenir une concentration positive pendant ce moment intense. Il existe plusieurs techniques de respiration, mais l'une des plus couramment enseignées est la respiration profonde et lente. Lorsque les contractions surviennent, il est recommandé de prendre de profondes inspirations par le nez, en comptant lentement jusqu'à quatre, puis de relâcher l'air lentement par la bouche en comptant jusqu'à six. Cette méthode de respiration permet de réduire la tension musculaire et de maximiser l'oxygénation du corps, ce qui peut contribuer à atténuer la douleur et à maintenir le calme. 
 En plus des techniques de respiration, nous vous enseignerons également les postures et les mouvements qui peuvent faciliter le travail. Ces positions peuvent contribuer à réduire la douleur et à encourager la progression du travail. Notre équipe de soins vous aidera à trouver les positions qui vous conviennent le mieux, vous permettant ainsi de participer activement à votre accouchement.
@@ -74,6 +77,7 @@ Au CHU Farhat Hached, nous nous engageons à vous offrir les meilleures options 
   {
     id: 3,
     title: 'MODES DE L’ACCOUCHEMENT',
+    video: `require('./assets/video1.mp4')`,
     content: [
       `ACCOUCHEMENT PAR VOIE BASSE : 
 L'accouchement par voie basse, également connu sous le nom d'accouchement vaginal, est le processus naturel par lequel un bébé naît par le canal vaginal de la mère. Pendant cet événement merveilleux, le corps de la mère travaille en tandem avec les contractions de l'utérus pour permettre au bébé de passer par le bassin maternel et de voir le jour. C'est une expérience physiologique incroyable, souvent guidée par des professionnels de la santé, visant à assurer la sécurité et le bien-être de la mère et du bébé tout au long du processus. L'accouchement par voie basse est le mode d'accouchement le plus courant et offre de nombreux avantages pour la récupération de la mère et la santé du bébé.
@@ -92,6 +96,7 @@ Parmi ces instruments, le forceps, utilisé dans plus de 20,9% des accouchements
   {
     id: 4,
     title: 'DIRECTION DU TRAVAIL ',
+    video: `require('./assets/video1.mp4')`,
     content: [
       `La direction du travail par l'ocytocine est une étape importante dans le processus d'accouchement. L'ocytocine est une hormone naturelle produite par le corps qui joue un rôle clé dans le déclenchement des contractions utérines. Si le col de l'utérus est favorable, c'est-à-dire qu'il est suffisamment effacé et dilaté, l'ocytocine peut être administrée pour stimuler et renforcer les contractions. Cela peut être nécessaire dans certaines situations, comme lorsque le travail progresse lentement ou s'il y a des préoccupations pour la santé de la mère ou du bébé. Pendant cette phase, la surveillance de l'électrocardiographie fœtale continue (ERCF) est cruciale. L'ERCF permet de suivre de près le rythme cardiaque du bébé et les contractions utérines, assurant ainsi leur bien-être pendant le travail. Cette intervention est effectuée sous la supervision attentive de l'équipe médicale pour garantir la sécurité de la mère et du bébé à chaque étape du processus d'accouchement.
 
@@ -102,6 +107,7 @@ Parmi ces instruments, le forceps, utilisé dans plus de 20,9% des accouchements
   {
     id: 5,
     title: 'AMNIOTOMIE ',
+    video: `require('./assets/video1.mp4')`,
     content: [
       `L'amniotomie est une procédure médicale dans laquelle la poche des eaux entourant le fœtus est délibérément rompue par un professionnel de la santé pendant le travail. Cette procédure est généralement effectuée lorsque le col de l'utérus est suffisamment dilaté et effacé, et que la tête du bébé est bien engagée dans le bassin maternel. Les principales indications de l'amniotomie comprennent l'accélération du travail en renforçant les contractions, le déclenchement du travail lorsque les contractions ne se produisent pas naturellement, ou lorsque les membranes amniotiques sont intactes à un stade avancé du travail. L'amniotomie permet également de mieux surveiller le liquide amniotique et le bien-être du fœtus. Cependant, elle est réalisée avec précaution pour éviter les complications, notamment l'infection, et ne doit être pratiquée que lorsque les avantages l'emportent sur les risques, après une évaluation médicale appropriée.
 
@@ -111,6 +117,7 @@ Parmi ces instruments, le forceps, utilisé dans plus de 20,9% des accouchements
   {
     id: 6,
     title: 'VISITE VIRTUELLE DE NOTRE SALLE D’ACCOUCHEMENT ',
+    video: `require('./assets/video1.mp4')`,
     content: [
       `"Accompagnez-nous, future maman, pour une visite virtuelle de notre maternité, de la salle d'attente chaleureuse aux box d'accouchement et même jusqu'à notre bloc opératoire, où nous serons à vos côtés pour vous guider tout au long de cette précieuse étape de la vie."
 
@@ -120,6 +127,7 @@ Parmi ces instruments, le forceps, utilisé dans plus de 20,9% des accouchements
   {
     id: 7,
     title: 'COMPLICATIONS POSSIBLES ',
+    video: `require('./assets/video1.mp4')`,
     content: [
       `Pendant l'accouchement, il est important de rester informé sur les éventuelles complications qui peuvent survenir. Deux des complications possibles sont l'atonie utérine et les déchirures cervicales. L'atonie utérine se produit lorsque l'utérus ne se contracte pas efficacement après l'accouchement, ce qui peut entraîner une hémorragie post-partum. Les déchirures cervicales, quant à elles, surviennent lorsque le col de l'utérus se déchire pendant le travail. Bien que ces complications puissent être préoccupantes, il est important de se rappeler que les professionnels de la santé sont formés pour les détecter et les gérer rapidement. En restant attentif aux signes et en communiquant ouvertement avec votre équipe médicale, vous pouvez contribuer à une prise en charge efficace et à la réduction des risques. Gardez à l'esprit que la majorité des accouchements se déroulent sans complications majeures, mais il est bon d'être conscient des situations possibles et de se préparer en conséquence pour une expérience d'accouchement positive et en toute sécurité.
 `,
@@ -128,6 +136,7 @@ Parmi ces instruments, le forceps, utilisé dans plus de 20,9% des accouchements
   {
     id: 8,
     title: 'PREMIERS INSTANTS AVEC LE BEBE ',
+    video: `require('./assets/video1.mp4')`,
     content: [
       `Les premières heures Que se passe-t-il en salle de naissance? 
 Après l'accouchement, votre bébé et vous allez rester en salle de travail (ou de naissance). C'est le premier moment où vous serez réunis ! Pendant que vous vous découvrez et que vous établissez le lien, le personnel soignant met en place une surveillance. Cette étape dure au moins 2 heures et permet de s'assurer de l'absence d'hémorragie et de la bonne adaptation de votre bébé. Une première mise al pourra vous être proposée si vous ave choisi d'allaiter votre enfant. la fin des 2 heures, après une dernière vérification par la sage-femme, vous pourrez quitter la salle de naissance

@@ -2,7 +2,7 @@ import { View, Text, Image, TouchableOpacity } from 'react-native';
 import React from 'react';
 const HomeNonAuth = ({ navigation }) => {
   return (
-    <View className=' py-5 flex-1   items-center  justify-around bg-[#ffff]   '>
+    <View className=' py-5 h-[100vh]   items-center  justify-around bg-[#ffff]   '>
       <Image
         source={require('./../assets/stars.png')}
         className=' '

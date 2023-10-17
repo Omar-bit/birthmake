@@ -6,7 +6,6 @@ import {
   TouchableOpacity,
 } from 'react-native';
 import React from 'react';
-import { Shadow } from 'react-native-shadow-2';
 const PersonalInfos = ({ personalInfos, setPersonalInfos, setCurrentStep }) => {
   function modifyPersonal(i, val) {
     const newPersonalInfos = personalInfos.map((el, index) =>

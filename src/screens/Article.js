@@ -4,10 +4,12 @@ import data from '../data';
 import { AntDesign } from '@expo/vector-icons';
 import { ResizeMode } from 'expo-av';
 import VideoPlayer from 'expo-video-player';
+import { UserContext } from '../../App';
 const Article = ({ route, navigation }) => {
+  const { lang } = React.useContext(UserContext);
   const [idArticle, setIdArticle] = React.useState([route.params.itemId, 0]);
   const nbrOfArticles = data.length;
-  const nbrOfCurrentArticleContents = data[idArticle[0]].content.length;
+  const nbrOfCurrentArticleContents = data[idArticle[0]][lang].content.length;
   function nextArticle() {
     let thisArticle = [idArticle[0], idArticle[1] + 1];
     if (thisArticle[1] > nbrOfCurrentArticleContents - 1) {
@@ -42,7 +44,7 @@ const Article = ({ route, navigation }) => {
             onPress={() => navigation.goBack()}
           />
           <Text className='text-lg font-semibold text-[#ffff] mx-auto'>
-            {data[idArticle[0]].title}
+            {data[idArticle[0]][lang].title}
           </Text>
         </View>
         <ScrollView className='h-[90vh]  p-2 '>
@@ -55,8 +57,7 @@ const Article = ({ route, navigation }) => {
                 videoProps={{
                   resizeMode: ResizeMode.CONTAIN,
                   shouldPlay: false,
-                  // ❗ source is required https://docs.expo.io/versions/latest/sdk/video/#props
-                  //source: data[idArticle[0]].video,
+
                   source: {
                     uri: 'http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4',
                   },
@@ -65,7 +66,7 @@ const Article = ({ route, navigation }) => {
             </View>
           ) : null}
           <Text className='text-[16px]'>
-            {data[idArticle[0]].content[idArticle[1]]}
+            {data[idArticle[0]][lang].content[idArticle[1]]}
           </Text>
         </ScrollView>
         <View className='h-[10vh]  flex-row items-center justify-between px-3 absolute bottom-0 left-0 w-full  z-50'>

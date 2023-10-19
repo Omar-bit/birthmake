@@ -18,11 +18,11 @@ const Radio = ({ questions, setQuestions, id }) => {
     );
   }, [selectedBull]);
   return (
-    <View className='flex flex-row items-center gap-3'>
+    <View className='flex flex-row items-center gap-7'>
       {colorsGuide.map((color, index) => (
         <TouchableOpacity
           key={index}
-          className={`w-9 h-9  rounded-full ${
+          className={`w-6 h-6  rounded-full ${
             index == selectedBull ? 'border-2' : ''
           }`}
           style={{ backgroundColor: color.color }}

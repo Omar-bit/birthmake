@@ -1,0 +1,4 @@
+1-translate form to ar*
+4-google authentication
+6-authors pop up
+3-animations[swipe right ,swipe up]

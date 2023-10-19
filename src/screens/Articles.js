@@ -2,8 +2,18 @@ import { View, Text, Image, ScrollView, TouchableOpacity } from 'react-native';
 import React from 'react';
 import data from '../data';
 import { Ionicons } from '@expo/vector-icons';
+import { UserContext } from '../../App';
 
 const Articles = ({ navigation }) => {
+  const { user, setUser, lang } = React.useContext(UserContext);
+  const langData = {
+    ar: {
+      header: 'نهار ولادتك',
+    },
+    fr: {
+      header: 'Le Jour J',
+    },
+  };
   return (
     <View className='flex-1 '>
       <Image
@@ -22,11 +32,11 @@ const Articles = ({ navigation }) => {
             />
           </View>
           <Text className='text-[#ffff] font-semibold text-4xl tracking-wider	text-center mt-10'>
-            Le Jour J
+            {langData[lang].header}
           </Text>
           <Image
             source={require('./../assets/doctorANDpatient.png')}
-            className='w-full max-h-[250px]'
+            className='w-full max-h-[225px]'
             style={{ resizeMode: 'stretch' }}
           />
         </View>
@@ -41,7 +51,9 @@ const Articles = ({ navigation }) => {
                 })
               }
             >
-              <Text className='text-[#ffff] text-lg'>{article.title}</Text>
+              <Text className='text-[#ffff] text-lg'>
+                {article[lang].title}
+              </Text>
             </TouchableOpacity>
           ))}
           <TouchableOpacity className='w-[70%] mx-auto  p-5 my-1 rounded-lg'>

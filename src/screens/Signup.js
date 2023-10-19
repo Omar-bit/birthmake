@@ -15,8 +15,28 @@ import Toast from 'react-native-toast-message';
 import { firebaseAuth } from '../config/firebase';
 
 import { createUserWithEmailAndPassword, updateProfile } from 'firebase/auth';
+import { UserContext } from '../../App';
 
 const Signup = ({ navigation }) => {
+  const { lang, setLang } = React.useContext(UserContext);
+  const langData = {
+    ar: {
+      header: 'إنضمي إلينا',
+      description: 'أدخلي اسمكي , بريدكي الإلكتروني و كلمة مروركي',
+      name: 'الاسم',
+      email: 'البريد الالكتروني',
+      pwd: 'كلمة السر',
+      createAccButton: 'إنشأ حسابي',
+    },
+    fr: {
+      header: 'Rejoignez-nous',
+      description: 'Entrez votre nom , e-mail et mot de passe',
+      name: 'Nom',
+      email: 'Email',
+      pwd: 'Mot de passe',
+      createAccButton: 'Crée mon compte',
+    },
+  };
   const [name, setName] = React.useState('');
   const [email, setEmail] = React.useState('');
   const [password, setPassword] = React.useState('');
@@ -69,9 +89,9 @@ const Signup = ({ navigation }) => {
         style={{ backgroundColor: 'white' }}
       >
         <View className='justify-center items-center gap-1'>
-          <Text className='text-text text-xl '>Rejoignez-nous</Text>
+          <Text className='text-text text-xl '>{langData[lang].header}</Text>
           <Text className='text-[#68B2A0] text-md z-20 '>
-            Entrez votre nom , e-mail et mot de passe
+            {langData[lang].description}
           </Text>
         </View>
 
@@ -83,7 +103,7 @@ const Signup = ({ navigation }) => {
             }}
           >
             <TextInput
-              placeholder='nom'
+              placeholder={langData[lang].name}
               placeholderTextColor='#aaa'
               value={name}
               onChangeText={(text) => setName(text)}
@@ -108,7 +128,7 @@ const Signup = ({ navigation }) => {
             }}
           >
             <TextInput
-              placeholder='Email'
+              placeholder={langData[lang].email}
               placeholderTextColor='#aaa'
               value={email}
               onChangeText={(text) => setEmail(text)}
@@ -134,7 +154,7 @@ const Signup = ({ navigation }) => {
             }}
           >
             <TextInput
-              placeholder='Mot de passe'
+              placeholder={langData[lang].pwd}
               secureTextEntry={!isPasswordShown}
               placeholderTextColor='#aaa'
               value={password}
@@ -168,7 +188,7 @@ const Signup = ({ navigation }) => {
             onPress={signup}
           >
             <Text className=' text-[#ffff] text-md font-bold'>
-              Crée mon compte
+              {langData[lang].createAccButton}
             </Text>
           </TouchableOpacity>
         </View>

@@ -3,9 +3,9 @@ import React from 'react';
 import { UserContext } from '../../App';
 const ToggleLang = () => {
   const { lang, setLang } = React.useContext(UserContext);
-  console.log(lang);
+
   return (
-    <View className='rounded-xl bg-text flex-row items-center p-1 gap-x-1 '>
+    <View className='rounded-xl bg-text flex-row  items-center p-1 gap-x-1 '>
       <TouchableOpacity
         onPress={() => setLang('ar')}
         className={`w-8 h-8  rounded-full flex justify-center items-center ${

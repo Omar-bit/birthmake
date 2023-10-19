@@ -16,12 +16,29 @@ import { firebaseAuth } from '../config/firebase';
 import Toast from 'react-native-toast-message';
 import { signInWithEmailAndPassword } from 'firebase/auth';
 import { UserContext } from '../../App';
+
 const Login = ({ navigation }) => {
   const [email, setEmail] = React.useState('');
   const [password, setPassword] = React.useState('');
   const [isPasswordShown, setIsPasswordShown] = React.useState(false);
   const { user, setUser } = React.useContext(UserContext);
-
+  const { lang, setLang } = React.useContext(UserContext);
+  const langData = {
+    ar: {
+      header: 'تسجيل الدخول',
+      description: 'أدخلي بريدكي الالكتروني و كلمة السر',
+      email: 'البريد الالكتروني',
+      pwd: 'كلمة السر',
+      signInText: 'تسجيل الدخول ',
+    },
+    fr: {
+      header: 'Se Connecter',
+      description: 'Entrez votre e-mail et mot de passe',
+      email: 'Email',
+      pwd: 'Mot de passe',
+      signInText: 'Se Connecter',
+    },
+  };
   const auth = firebaseAuth;
   async function login() {
     //error-valid
@@ -64,9 +81,9 @@ const Login = ({ navigation }) => {
         style={{ backgroundColor: 'white' }}
       >
         <View className='justify-center items-center gap-1'>
-          <Text className='text-text text-xl '>Se Connecter</Text>
+          <Text className='text-text text-xl '>{langData[lang].header}</Text>
           <Text className='text-[#68B2A0] text-md z-20 '>
-            Entrez votre e-mail et mot de passe
+            {langData[lang].description}
           </Text>
         </View>
 
@@ -78,7 +95,7 @@ const Login = ({ navigation }) => {
             }}
           >
             <TextInput
-              placeholder='Email'
+              placeholder={langData[lang].email}
               placeholderTextColor='#aaa'
               value={email}
               onChangeText={(text) => setEmail(text)}
@@ -104,7 +121,7 @@ const Login = ({ navigation }) => {
             }}
           >
             <TextInput
-              placeholder='Mot de passe'
+              placeholder={langData[lang].pwd}
               secureTextEntry={!isPasswordShown}
               placeholderTextColor='#aaa'
               value={password}
@@ -138,7 +155,7 @@ const Login = ({ navigation }) => {
             onPress={login}
           >
             <Text className=' text-[#ffff] text-md font-bold'>
-              Se Connecter
+              {langData[lang].signInText}
             </Text>
           </TouchableOpacity>
         </View>

@@ -3,19 +3,36 @@ import React from 'react';
 import { UserContext } from '../../App';
 import ToggleLang from '../components/ToggleLang';
 const Home = ({ navigation }) => {
-  const { user, setUser } = React.useContext(UserContext);
-
+  const { user, setUser, lang } = React.useContext(UserContext);
+  const langData = {
+    ar: {
+      welcomeText: 'مرحبا بكي في BirthMate',
+      signOutButton: 'تسجيل الخروج',
+      articles: 'نهار ولادتك',
+      evaluateText: 'قيمنا',
+    },
+    fr: {
+      welcomeText: 'Bienvenue sur BirthMate',
+      signOutButton: 'Sign out',
+      articles: 'Le Jour J',
+      evaluateText: 'Evaluez-nous',
+    },
+  };
   return (
     <>
-      <View className='flex-row w-full px-1 py-7   items-center justify-around  '>
-        <Text className='font-bold text-lg text-text'>
-          {user._tokenResponse.displayName}
-        </Text>
+      <View className=' flex-row  w-[100vw]   py-10  items-center gap-x-5  justify-around   '>
+        <View className=''>
+          <Text className='font-bold text-lg text-text'>
+            {user._tokenResponse.displayName}
+          </Text>
+        </View>
         <TouchableOpacity
-          className='border border-wrongred rounded-md py-2 px-5'
+          className='border border-wrongred rounded-md py-2 px-5 '
           onPress={() => setUser(null)}
         >
-          <Text className='text-wrongred  font-semibold '>Sign out</Text>
+          <Text className='text-wrongred  font-semibold '>
+            {langData[lang].signOutButton}
+          </Text>
         </TouchableOpacity>
         <ToggleLang />
       </View>
@@ -30,7 +47,7 @@ const Home = ({ navigation }) => {
         </View>
         <View className='flex justify-start gap-y-32 items-center h-[75vh]  '>
           <Text className='text-[#9D3284] text-xl font-semibold h-[5vh]'>
-            Bienvenue sur BirthMate
+            {langData[lang].welcomeText}
           </Text>
 
           <View className='gap-y-10  items-start h-[10vh]  '>
@@ -38,13 +55,17 @@ const Home = ({ navigation }) => {
               onPress={() => navigation.navigate('Articles')}
               className='w-[250px] py-3 h-12 justify-center items-center bg-primary rounded-md'
             >
-              <Text className=' text-[#ffff] text-lg'>Le Jour J </Text>
+              <Text className=' text-[#ffff] text-lg'>
+                {langData[lang].articles}
+              </Text>
             </TouchableOpacity>
             <TouchableOpacity
               onPress={() => navigation.navigate('Evaluation')}
               className='w-[250px] py-3 h-12 justify-center items-center bg-primary rounded-md'
             >
-              <Text className=' text-[#ffff] text-lg'>Évaluez-nous</Text>
+              <Text className=' text-[#ffff] text-lg'>
+                {langData[lang].evaluateText}
+              </Text>
             </TouchableOpacity>
           </View>
         </View>

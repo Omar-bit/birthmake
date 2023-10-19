@@ -1,8 +1,23 @@
 import { View, Text, Image, TouchableOpacity } from 'react-native';
 import React from 'react';
 import ToggleLang from './../components/ToggleLang';
-
+import { UserContext } from '../../App';
 const HomeNonAuth = ({ navigation }) => {
+  const { lang, setLang } = React.useContext(UserContext);
+  const langData = {
+    ar: {
+      description: 'رحلتك إلى الأمومة',
+      signUpButton: 'إبدأ',
+      signInText: 'لديكي حساب بالفعل ؟',
+      signInButton: 'تسجيل الدخول',
+    },
+    fr: {
+      description: 'Votre parcours vers la maternité',
+      signUpButton: 'Commencer',
+      signInText: 'Vous avez deja un compte ?',
+      signInButton: 'se connecter',
+    },
+  };
   return (
     <View className='flex-1 py-5 h-[100vh]   items-center  justify-around bg-[#ffff]   '>
       <View className='w-full flex-row items-center justify-between px-5'>
@@ -15,7 +30,7 @@ const HomeNonAuth = ({ navigation }) => {
       </View>
       <Text className='text-text text-2xl font-semibold'>BirthMate</Text>
       <Text className='text-[#9D3284] text-xl z-20 '>
-        Votre parcours vers la maternité
+        {langData[lang].description}
       </Text>
       <Image
         source={require('./../assets/pregnantWoman2.png')}
@@ -28,17 +43,19 @@ const HomeNonAuth = ({ navigation }) => {
           navigation.navigate('Signup');
         }}
       >
-        <Text className=' text-[#ffff] text-md font-bold'>Commencer</Text>
+        <Text className=' text-[#ffff] text-md font-bold'>
+          {langData[lang].signUpButton}
+        </Text>
       </TouchableOpacity>
       <Text className='text-[#68B2A0] text-md'>
-        Vous avez deja un compte ?{' '}
+        {langData[lang].signInText}
         <Text
-          className='text-text'
+          className='text-text px-2'
           onPress={() => {
             navigation.navigate('Login');
           }}
         >
-          se connecter
+          {langData[lang].signInButton}
         </Text>
       </Text>
     </View>

@@ -12,6 +12,7 @@ const Submitting = ({ personalInfos, questions }) => {
   async function submitEval() {
     try {
       const res = await addDoc(evaluations, {
+        date: new Date(),
         answers: { ...questions },
         personal: { ...personalInfos },
         user: {

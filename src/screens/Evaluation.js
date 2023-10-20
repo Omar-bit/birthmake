@@ -5,54 +5,102 @@ import PersonalInfos from '../components/PersonalInfos';
 import Guide from '../components/Guide';
 import Questionaire from '../components/Questionaire';
 import Submitting from '../components/Submitting';
+import { UserContext } from '../../App';
 const Evaluation = ({ navigation }) => {
+  const { lang } = React.useContext(UserContext);
+  const langData = {
+    ar: { header: 'التقييم', footer: 'أجبي على الأسئلة التالية' },
+    fr: { header: 'Evaluation', footer: 'Répodez au questions suivants' },
+  };
   const [personalInfos, setPersonalInfos] = React.useState([
-    { q: 'age:', answer: 0, type: 'numeric' },
-    { q: 'Origine géographique', answer: '' },
-    { q: "Niveau d'instruction:", answer: 0, type: 'numeric' },
-    { q: 'Situation professionnelle :', answer: '' },
-    { q: 'Nombre de grossesses ::', answer: 0, type: 'numeric' },
-    { q: 'Evaluation subjective des accouchements précédents :', answer: '' },
-    { q: 'Suivi de la grossesse :', answer: '' },
-    { q: 'Suivie par : ', answer: '' },
-    { q: 'Préparation à l’accouchement : ', answer: '' },
-    { q: ' DYSGRAVIDIE :', answer: '' },
-    { q: ' DYSGRAVIDIE :', answer: '' },
+    { ar: { q: 'العمر' }, fr: { q: 'Age' }, answer: 0, type: 'numeric' },
     {
-      q: ` Avez-vous exprimé des demandes ou des souhaits particuliers sur le déroulement de l’accouchement au moment de l’accouchement lui-même ? `,
+      ar: { q: 'المنشأ الجغرافي' },
+      fr: { q: 'Origine géographique' },
       answer: '',
     },
     {
-      q: ` Avez-vous eu un déclenchement 
-pour votre accouchement ? `,
+      ar: { q: 'المستوى التعليمي' },
+      fr: { q: "Niveau d'instruction" },
+
+      answer: 0,
+      type: 'numeric',
+    },
+    {
+      ar: { q: 'الوضع الوظيفي' },
+      fr: { q: 'Situation professionnelle' },
       answer: '',
     },
     {
-      q: ` Avez-vous eu des informations 
-sur le déclenchement  ?`,
+      ar: { q: 'عدد الحمل وعدد الأطفال الأحياء وعدد الإجهاضات' },
+      fr: { q: 'Nombre de grossesses' },
+      answer: 0,
+      type: 'numeric',
+    },
+    {
+      ar: { q: 'التقييم الشخصي لولادات سابقة: تجربة إيجابية تجربة سلبية' },
+      fr: { q: 'Evaluation subjective des accouchements précédents' },
+      answer: '',
+    },
+    {
+      ar: { q: 'متابعة الحمل' },
+      fr: { q: 'Suivi de la grossesse' },
+      answer: '',
+    },
+    { ar: { q: 'المتابعة بواسطة' }, fr: { q: 'Suivie par' }, answer: '' },
+    {
+      ar: { q: 'التحضير للولادة' },
+      fr: { q: 'Préparation à l’accouchement' },
+      answer: '',
+    },
+    { ar: { q: 'تضاعف حمل' }, fr: { q: 'DYSGRAVIDIE' }, answer: '' },
+    {
+      ar: {
+        q: 'هل قدمتي طلبات أو أماني خاصة بخصوص سير الولادة عند الولادة نفسها؟',
+      },
+      fr: {
+        q: 'Avez-vous exprimé des demandes ou des souhaits particuliers sur le déroulement de l’accouchement au moment de l’accouchement lui-même ?',
+      },
+
+      answer: '',
+    },
+    {
+      ar: {
+        q: 'هل تم تحفيز ولادتك',
+      },
+      fr: { q: 'Avez-vous eu un déclenchement pour votre accouchement ?' },
+      answer: '',
+    },
+    {
+      ar: { q: 'هل تلقيتي معلومات حول التحفيز' },
+      fr: { q: 'Avez-vous eu des informations sur le déclenchement  ?' },
+      answer: '',
+    },
+    {
+      ar: { q: 'هل تلقيتي معلومات حول التخدير النصفي' },
+      fr: { q: 'Avez-vous eu des informations  concernant la péridurale ?' },
       answer: '',
     },
 
     {
-      q: `Si vous avez eu une péridurale : `,
+      ar: { q: 'في حالة أنكي سمعتي عن التخدير النصفي:' },
+      fr: { q: 'Si vous avez eu une péridurale' },
       answer: '',
       type: 'not',
     },
+    { ar: { q: 'هل أنجبت؟' }, fr: { q: 'Vous avez accouché ?' }, answer: '' },
     {
-      q: ` Vous avez accouché ?`,
+      ar: { q: 'أثناء الولادة، هل تشعرين أنه تم احترام خصوصيتك؟' },
+      fr: {
+        q: 'Au cours de votre accouchement, avez-vous le sentiment que votre intimité a été respectée',
+      },
+
       answer: '',
     },
     {
-      q: ` Au cours de votre 
-accouchement, avez-vous le
-sentiment que votre intimité
-a été respectée :
-`,
-      answer: '',
-    },
-    {
-      q: ` En cas de césarienne , on vous
-a expliqué l’indication?`,
+      ar: { q: 'إذا تمت عملية قيصرية، هل تم شرح السبب لك' },
+      fr: { q: 'En cas de césarienne , on vous a expliqué l’indication?' },
+
       answer: '',
     },
   ]);
@@ -60,7 +108,8 @@ a expliqué l’indication?`,
   const [questions, setQuestions] = React.useState([
     {
       id: 1,
-      q: 'je me sentais inquiète',
+      fr: { q: 'je me sentais inquiète' },
+      ar: { q: 'كان لدي انفعالات قلق ' },
       type: 'radio',
       answer: null,
       needValidation: false,
@@ -68,7 +117,8 @@ a expliqué l’indication?`,
     },
     {
       id: 2,
-      q: 'je me sentais en sécuritée',
+      fr: { q: 'je me sentais en sécuritée' },
+      ar: { q: 'كنت مشعرة بالأمان ' },
       type: 'radio',
       answer: null,
       needValidation: false,
@@ -76,7 +126,8 @@ a expliqué l’indication?`,
     },
     {
       id: 3,
-      q: 'je me ressentis bizarres',
+      fr: { q: 'je me ressentis bizarres' },
+      ar: { q: 'شعرت بأحاسيس غريبة ' },
       type: 'radio',
       answer: null,
       needValidation: false,
@@ -84,7 +135,8 @@ a expliqué l’indication?`,
     },
     {
       id: 4,
-      q: 'je me sentais confiante',
+      fr: { q: 'je me sentais confiante' },
+      ar: { q: 'كنت مشعرة بالثقة ' },
       type: 'radio',
       answer: null,
       needValidation: false,
@@ -92,7 +144,12 @@ a expliqué l’indication?`,
     },
     {
       id: 5,
-      q: "L'équipe soignante comprenait et répondait à mes désirs de manière satisfaisante",
+      fr: {
+        q: "L'équipe soignante comprenait et répondait à mes désirs de manière satisfaisante",
+      },
+      ar: {
+        q: 'فهم الفريق الطبي مطالبي واستجاب لها بشكل مرضٍ',
+      },
       type: 'radio',
       answer: null,
       needValidation: false,
@@ -100,7 +157,12 @@ a expliqué l’indication?`,
     },
     {
       id: 6,
-      q: "je me suis sentie soutenue émotionellement par les professionnels qui s'occupaient demoi",
+      fr: {
+        q: "je me suis sentie soutenue émotionellement par les professionnels qui s'occupaient demoi",
+      },
+      ar: {
+        q: 'شعرت بالدعم العاطفي من قبل المحترفين الذين كانوا يعتنون بي',
+      },
       type: 'radio',
       answer: null,
       needValidation: false,
@@ -108,7 +170,8 @@ a expliqué l’indication?`,
     },
     {
       id: 7,
-      q: 'les professionnels me tenaient informée de ce qui se passait',
+      fr: { q: 'les professionnels me tenaient informée de ce qui se passait' },
+      ar: { q: 'قام المحترفون بإبقائي على دراية بما كان يجري' },
       type: 'radio',
       answer: null,
       needValidation: false,
@@ -116,7 +179,12 @@ a expliqué l’indication?`,
     },
     {
       id: 8,
-      q: "je sentais que je pouvais m'exprimer et donner mon avis à propos",
+      fr: {
+        q: "je sentais que je pouvais m'exprimer et donner mon avis à propos",
+      },
+      ar: {
+        q: 'شعرت أنه بإمكاني التعبير والتعبير عن آرائي حول الأمور',
+      },
       type: 'radio',
       answer: null,
       needValidation: false,
@@ -124,14 +192,20 @@ a expliqué l’indication?`,
     },
     {
       id: 9,
-      q: 'Je suis satisfaite de la manière dont les événement se sont',
+      fr: { q: 'Je suis satisfaite de la manière dont les événement se sont' },
+      ar: { q: 'أنا راضية عن كيفية تطور الأمور' },
       type: 'radio',
       answer: null,
       needValidation: false,
       valid: true,
     },
     {
-      q: 'Pendant le travail(des premières contractions jusqu’aux premières poussées)',
+      fr: {
+        q: 'Pendant le travail(des premières contractions jusqu’aux premières poussées)',
+      },
+      ar: {
+        q: 'أثناء المخاض (من الانقباضات الأولى إلى الدفعات الأولى)',
+      },
       type: 'header',
       answer: null,
       needValidation: false,
@@ -139,7 +213,12 @@ a expliqué l’indication?`,
     },
     {
       id: 10,
-      q: 'J’ai réussi à utiliser des méthodes de relaxation pour m’aider lors des contractions',
+      fr: {
+        q: 'J’ai réussi à utiliser des méthodes de relaxation pour m’aider lors des contractions',
+      },
+      ar: {
+        q: 'استخدام أساليب الاسترخاء للمساعدة خلال التقلصات',
+      },
       type: 'radio',
       answer: null,
       needValidation: false,
@@ -147,7 +226,8 @@ a expliqué l’indication?`,
     },
     {
       id: 11,
-      q: 'J’ai pu me mouvoir ou choisir librement ma position',
+      fr: { q: 'J’ai pu me mouvoir ou choisir librement ma position' },
+      ar: { q: 'كنت قادرة على التحرك أو اختيار وضعي بحرية' },
       type: 'radio',
       answer: null,
       needValidation: false,
@@ -155,7 +235,8 @@ a expliqué l’indication?`,
     },
     {
       id: 12,
-      q: 'On a pu soulager ma douleur au moment où je l’ai demandé',
+      fr: { q: 'On a pu soulager ma douleur au moment où je l’ai demandé' },
+      ar: { q: 'تم تخفيف آلامي عندما طلبت ذلك' },
       type: 'radio',
       answer: null,
       needValidation: false,
@@ -163,7 +244,8 @@ a expliqué l’indication?`,
     },
     {
       id: 13,
-      q: 'Tout s’est déroulé comme je l’avais imaginé',
+      fr: { q: 'Tout s’est déroulé comme je l’avais imaginé' },
+      ar: { q: 'كل شيء جرى كما تخيلته ' },
       type: 'radio',
       answer: null,
       needValidation: false,
@@ -171,7 +253,8 @@ a expliqué l’indication?`,
     },
     {
       id: 14,
-      q: 'J’avais l’impression de perdre tous mes moyens',
+      fr: { q: 'J’avais l’impression de perdre tous mes moyens' },
+      ar: { q: 'شعرت بأنني فقدت قدرتي على السيطرة' },
       type: 'radio',
       answer: null,
       needValidation: false,
@@ -179,7 +262,8 @@ a expliqué l’indication?`,
     },
     {
       id: 15,
-      q: 'Mon partenaire n’était pas présent pendant le',
+      fr: { q: 'Mon partenaire n’était pas présent pendant le' },
+      ar: { q: 'شريكي لم يكن حاضرًا أثناء  ' },
       type: 'radio',
       answer: null,
       needValidation: false,
@@ -187,14 +271,20 @@ a expliqué l’indication?`,
     },
     {
       id: 16,
-      q: 'Le soutien de mon partenaire m’a aidé',
+      fr: { q: 'Le soutien de mon partenaire m’a aidé' },
+      ar: { q: 'دعم شريكي ساعدني ' },
       type: 'radio',
       answer: null,
       needValidation: false,
       valid: true,
     },
     {
-      q: 'Sur une échelle de 0 à 10, à quel point avez-vous éprouvé de la douleur ?',
+      fr: {
+        q: 'Sur une échelle de 0 à 10, à quel point avez-vous éprouvé de la douleur ?',
+      },
+      ar: {
+        q: 'على مقياس من 0 إلى 10، ما مقدار الألم الذي شعرت به؟',
+      },
       type: 'header',
       answer: null,
       needValidation: false,
@@ -202,7 +292,8 @@ a expliqué l’indication?`,
     },
     {
       id: 17,
-      q: 'Durant le travail :',
+      fr: { q: 'Durant le travail :' },
+      ar: { q: 'أثناء العمل' },
       type: 'slider',
       answer: null,
       needValidation: true,
@@ -210,7 +301,9 @@ a expliqué l’indication?`,
     },
     {
       id: 18,
-      q: "Durent l'accouchement (césarienne ou voie basse)",
+      fr: { q: "Durant l'accouchement (césarienne ou voie basse)" },
+      ar: { q: 'أثناء الولادة (الولادة القيصرية أو الولادة المهبلية)' },
+
       type: 'slider',
       answer: null,
       needValidation: false,
@@ -218,7 +311,8 @@ a expliqué l’indication?`,
     },
     {
       id: 19,
-      q: 'Immédiatement aprés la naissance',
+      fr: { q: 'Immédiatement aprés la naissance' },
+      ar: { q: 'مباشرة بعد الولادة' },
       type: 'header',
       answer: null,
       needValidation: false,
@@ -226,7 +320,12 @@ a expliqué l’indication?`,
     },
     {
       id: 20,
-      q: "j'ai pu découvriir visuellement mon béé d emanière  satisfaisante",
+      fr: {
+        q: "j'ai pu découvrir visuellement mon bébé de manière  satisfaisante",
+      },
+      ar: {
+        q: 'تمكنت من رؤية طفلي بشكل مرض للغاية',
+      },
       type: 'radio',
       answer: null,
       needValidation: false,
@@ -234,7 +333,12 @@ a expliqué l’indication?`,
     },
     {
       id: 21,
-      q: "j'eu mon béé contre moi pour  la première fois au moment où  j'en ai eu envie",
+      fr: {
+        q: "j'eu mon béé contre moi pour  la première fois au moment où  j'en ai eu envie",
+      },
+      ar: {
+        q: 'حضنت طفلي للمرة الأولى عندما أردت ذلك',
+      },
       type: 'radio',
       answer: null,
       needValidation: false,
@@ -242,14 +346,20 @@ a expliqué l’indication?`,
     },
     {
       id: 22,
-      q: "Les premiers instants avec mon bébé correspondaient à ce que j'avais imaginé avant  d'accoucher",
+      fr: {
+        q: "Les premiers instants avec mon bébé correspondaient à ce que j'avais imaginé avant  d'accoucher",
+      },
+      ar: {
+        q: 'اللحظات الأولى مع طفلي كانت تمامًا كما توقعتها قبل الولادة',
+      },
       type: 'radio',
       answer: null,
       needValidation: false,
       valid: true,
     },
     {
-      q: 'À ce jour',
+      fr: { q: 'À ce jour' },
+      ar: { q: 'في الوقت الحاضر' },
       type: 'header',
       answer: null,
       needValidation: false,
@@ -257,7 +367,12 @@ a expliqué l’indication?`,
     },
     {
       id: 23,
-      q: "j'ai compris que tout ce qui s'est passé lors de mon accouchement",
+      fr: {
+        q: "j'ai compris que tout ce qui s'est passé lors de mon accouchement",
+      },
+      ar: {
+        q: 'لقد فهمت كل ما حدث خلال ',
+      },
       type: 'radio',
       answer: null,
       needValidation: false,
@@ -265,7 +380,8 @@ a expliqué l’indication?`,
     },
     {
       id: 24,
-      q: 'je suis fière de moi',
+      fr: { q: 'je suis fière de moi' },
+      ar: { q: 'أشعر بالفخر بنفسي ' },
       type: 'radio',
       answer: null,
       needValidation: false,
@@ -273,7 +389,8 @@ a expliqué l’indication?`,
     },
     {
       id: 25,
-      q: "j'ai des regrets",
+      fr: { q: "j'ai des regrets" },
+      ar: { q: 'لدي أندماجات ' },
       type: 'radio',
       answer: null,
       needValidation: false,
@@ -281,7 +398,8 @@ a expliqué l’indication?`,
     },
     {
       id: 26,
-      q: "j'ai un sentiment d'échec",
+      fr: { q: "j'ai un sentiment d'échec" },
+      ar: { q: 'أشعر بفشل ' },
       type: 'radio',
       answer: null,
       needValidation: false,
@@ -289,7 +407,8 @@ a expliqué l’indication?`,
     },
     {
       id: 27,
-      q: "L'idée d'accoucher une nouvelle fois m'effraie",
+      fr: { q: "L'idée d'accoucher une nouvelle fois m'effraie" },
+      ar: { q: 'فكرة الولادة مرة أخرى ترعبني ' },
       type: 'radio',
       answer: null,
       needValidation: false,
@@ -297,7 +416,12 @@ a expliqué l’indication?`,
     },
     {
       id: 28,
-      q: "Si l'on met de côté les  émossions relatives à l'arrivée de votre bébé, pour vous en tant que femme, votre vécu de l'accouchement a été : ",
+      fr: {
+        q: "Si l'on met de côté les  émossions relatives à l'arrivée de votre bébé, pour vous en tant que femme, votre vécu de l'accouchement a été : ",
+      },
+      ar: {
+        q: 'إذا تم تجاهل المشاعر المتعلقة بوصول طفلك الجديد وتركيز النظر على تجربتك كامرأة، كيف وصفت تجربتك في الولادة... (قم بتحديد الرقم المناسب على المقياس أدناه) سيئة جدًا جيدة جدًا ',
+      },
       type: 'slider',
       answer: null,
       needValidation: false,
@@ -329,7 +453,7 @@ a expliqué l’indication?`,
           onPress={navigation.goBack}
         />
         <Text className='mx-auto text-xl font-bold text-[#ffffff] tracking-wider'>
-          Evaluation
+          {langData[lang].header}
         </Text>
       </View>
       {formSteps[currentStep]}

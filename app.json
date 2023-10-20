@@ -33,6 +33,13 @@
         "projectId": "c8bd4c67-a098-4a14-ba71-f38bad20c11c"
       }
     },
-    "owner": "bo3"
-  }
+    "owner": "bo3",
+    "runtimeVersion": {
+      "policy": "appVersion"
+    },
+    "updates": {
+      "url": "https://u.expo.dev/c8bd4c67-a098-4a14-ba71-f38bad20c11c"
+    }
+  },
+  "scheme": "birthmake"
 }

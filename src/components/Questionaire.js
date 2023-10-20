@@ -3,7 +3,13 @@ import React from 'react';
 import Radio from './Radio';
 import SliderC from './SliderC';
 import CheckBox from './CheckBox';
+import { UserContext } from '../../App';
 const Questionaire = ({ questions, setQuestions, setCurrentStep }) => {
+  const { lang } = React.useContext(UserContext);
+  const langData = {
+    ar: { finishButton: 'إنتهي' },
+    fr: { finishButton: 'Terminer' },
+  };
   return (
     <View className='flex-1 flex flex-col items-center w-full p-1'>
       <ScrollView className='w-[80%] gap-5'>
@@ -12,7 +18,7 @@ const Questionaire = ({ questions, setQuestions, setCurrentStep }) => {
             {question.type != 'header' && (
               <View className='w-full  justify-center items-center gap-x-10'>
                 <Text className='text-lg pb-2 text-center'>
-                  {question.id}) {question.q}
+                  {question.id}) {question[lang].q}
                 </Text>
                 {question.needValidation == true && (
                   <View className='w-full flex-row  items-center justify-center'>
@@ -28,7 +34,7 @@ const Questionaire = ({ questions, setQuestions, setCurrentStep }) => {
             )}
             {question.type == 'header' && (
               <Text className='text-xl font-bold underline pb-2 text-center'>
-                {question.q}
+                {question[lang].q}
               </Text>
             )}
 
@@ -52,7 +58,9 @@ const Questionaire = ({ questions, setQuestions, setCurrentStep }) => {
           className='py-2 px-5 self-end rounded-md bg-primary'
           onPress={() => setCurrentStep((prev) => prev + 1)}
         >
-          <Text className=' text-[#ffff] text-lg font-semibold '>Terminer</Text>
+          <Text className=' text-[#ffff] text-lg font-semibold '>
+            {langData[lang].finishButton}
+          </Text>
         </TouchableOpacity>
       </ScrollView>
     </View>

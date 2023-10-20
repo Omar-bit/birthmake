@@ -21,6 +21,7 @@ export const UserContext = React.createContext();
 
 export default function App() {
   const [user, setUser] = React.useState(null);
+
   const [lang, setLang] = React.useState('fr');
 
   return (
@@ -87,3 +88,5 @@ const styles = StyleSheet.create({
     margin: 0,
   },
 });
+// IOS : 774172110540-b91lvkjcf9fcp1qq5kjj92k1p546s285.apps.googleusercontent.com
+// ANDROID : 774172110540-rlu3lvre8q9c3hbv56e2juc7nhc3u1lc.apps.googleusercontent.com

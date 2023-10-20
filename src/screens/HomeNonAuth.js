@@ -1,9 +1,23 @@
-import { View, Text, Image, TouchableOpacity } from 'react-native';
+import {
+  View,
+  Text,
+  Image,
+  TouchableOpacity,
+  Modal,
+  Linking,
+  ScrollView,
+} from 'react-native';
 import React from 'react';
 import ToggleLang from './../components/ToggleLang';
 import { UserContext } from '../../App';
+import { Feather } from '@expo/vector-icons';
+import { Ionicons } from '@expo/vector-icons';
+import { MaterialIcons } from '@expo/vector-icons';
+import { MaterialCommunityIcons } from '@expo/vector-icons';
+
 const HomeNonAuth = ({ navigation }) => {
   const { lang, setLang } = React.useContext(UserContext);
+  const [modalVisible, setModalVisible] = React.useState(false);
   const langData = {
     ar: {
       description: 'رحلتك إلى الأمومة',
@@ -18,6 +32,7 @@ const HomeNonAuth = ({ navigation }) => {
       signInButton: 'se connecter',
     },
   };
+
   return (
     <View className='flex-1 py-5 h-[100vh]   items-center  justify-around bg-[#ffff]   '>
       <View className='w-full flex-row items-center justify-between px-5'>
@@ -32,6 +47,7 @@ const HomeNonAuth = ({ navigation }) => {
       <Text className='text-[#9D3284] text-xl z-20 '>
         {langData[lang].description}
       </Text>
+
       <Image
         source={require('./../assets/pregnantWoman2.png')}
         className='	w-[90%]  min-h-[400px] h-[55vh] -translate-y-20 z-10 self-end'
@@ -58,6 +74,83 @@ const HomeNonAuth = ({ navigation }) => {
           {langData[lang].signInButton}
         </Text>
       </Text>
+      <TouchableOpacity
+        className=' rounded-md  p-2 absolute bottom-1 left-1 w-full'
+        onPress={() => setModalVisible(true)}
+      >
+        <Text className='font-semibold text-sm  text-text text-center'>
+          Authors
+        </Text>
+      </TouchableOpacity>
+      <Modal
+        animationType='slide'
+        transparent={true}
+        visible={modalVisible}
+        onRequestClose={() => {
+          Alert.alert('Modal has been closed.');
+          setModalVisible(!modalVisible);
+        }}
+      >
+        <View className='w-[100vw] h-[50vh] absolute z-10 bottom-0 bg-[#a1429ce9] rounded-t-3xl px-10 py-4'>
+          <TouchableOpacity
+            onPress={() => setModalVisible(false)}
+            className='absolute top-5 right-5'
+          >
+            <Feather name='x' size={28} color='white' />
+          </TouchableOpacity>
+
+          <View className='flex-col   gap-y-4  mt-1 items-start flex-1   '>
+            <TouchableOpacity
+              className='max-h-[60px]  w-[100%] self-end  mt-auto'
+              onPress={() => Linking.openURL('https://innovibe.tech/')}
+            >
+              <Image
+                source={require('./../assets/innovibe-white.png')}
+                className='   w-[100%]   max-h-[55px]   '
+                style={{ resizeMode: 'stretch' }}
+              />
+            </TouchableOpacity>
+            <Text className='text-secondary text-2xl underline font-bold'>
+              BirthMate was made by :
+            </Text>
+
+            <TouchableOpacity
+              className='flex-row items-center gap-x-5'
+              onPress={() => Linking.openURL('http://google.com')}
+            >
+              <MaterialCommunityIcons
+                name='thought-bubble'
+                size={24}
+                color='#ECDEE7'
+              />
+              <Text className='text-secondary text-xl font-semibold'>
+                Idea : Doctor
+              </Text>
+            </TouchableOpacity>
+
+            <TouchableOpacity
+              className='flex-row items-center gap-x-5'
+              onPress={() => Linking.openURL('ahmed@gmail.com')}
+            >
+              <MaterialIcons name='design-services' size={24} color='#ECDEE7' />
+              <Text className='text-secondary text-xl font-semibold'>
+                UI/UX Design : Ahmed Soussi
+              </Text>
+            </TouchableOpacity>
+            <TouchableOpacity
+              className='flex-row items-center '
+              onPress={() =>
+                Linking.openURL('https://linktr.ee/omar_bouassida')
+              }
+            >
+              <Ionicons name='code-slash' size={24} color='#ECDEE7' />
+              <Text className='text-secondary text-xl font-semibold items-center mx-1 '>
+                Developement: Omar Bouassida
+              </Text>
+            </TouchableOpacity>
+          </View>
+        </View>
+      </Modal>
     </View>
   );
 };

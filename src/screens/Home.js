@@ -23,7 +23,7 @@ const Home = ({ navigation }) => {
       <View className=' flex-row  w-[100vw]   py-10  items-center gap-x-5  justify-around   '>
         <View className=''>
           <Text className='font-bold text-lg text-text'>
-            {user._tokenResponse.displayName}
+            {user?._tokenResponse?.displayName}
           </Text>
         </View>
         <TouchableOpacity

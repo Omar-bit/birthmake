@@ -2,6 +2,8 @@ import { View, Text, TouchableOpacity, Image } from 'react-native';
 import React from 'react';
 import { UserContext } from '../../App';
 import ToggleLang from '../components/ToggleLang';
+import Animated, { FadeInLeft, FadeInRight } from 'react-native-reanimated';
+
 const Home = ({ navigation }) => {
   const { user, setUser, lang } = React.useContext(UserContext);
   const langData = {
@@ -39,7 +41,9 @@ const Home = ({ navigation }) => {
 
       <View className='flex-1 items-center justify-center '>
         <View className='w-[100vw] absolute top-[20vh] -translate-y-[50%]  left-0 -z-10 justify-start items-start  p-0 m-0'>
-          <Image
+          <Animated.Image
+            entering={FadeInLeft.duration(800).delay(500)}
+            exiting={FadeInRight.duration(800).delay(500)}
             source={require('./../assets/pregnantWomenHomePage2.png')}
             className=' self-start w-[80vw] h-[70vh]'
             style={{ resizeMode: 'stretch' }}

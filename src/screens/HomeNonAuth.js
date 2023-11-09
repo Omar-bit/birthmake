@@ -126,17 +126,14 @@ const HomeNonAuth = ({ navigation }) => {
                 BirthMate was made by :
               </Text>
 
-              <TouchableOpacity
-                className='flex-row items-center gap-x-5'
-                onPress={() => Linking.openURL('http://google.com')}
-              >
+              <TouchableOpacity className='flex-row items-center gap-x-5'>
                 <MaterialCommunityIcons
                   name='thought-bubble'
                   size={24}
                   color='#ECDEE7'
                 />
                 <Text className='text-secondary text-xl font-semibold'>
-                  Idea : Doctor
+                  Idea : Dr.Mohamed Rami Ltifi
                 </Text>
               </TouchableOpacity>
 

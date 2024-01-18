@@ -2,7 +2,7 @@
   "expo": {
     "name": "birthmate",
     "slug": "birthmake",
-    "version": "1.0.1",
+    "version": "3.0.0",
     "orientation": "portrait",
     "icon": "./src/assets/icon.png",
     "userInterfaceStyle": "light",
@@ -17,8 +17,9 @@
       "bundleIdentifier": "com.BO3.birthmake"
     },
     "android": {
+      "versionCode": 3,
       "adaptiveIcon": {
-        "foregroundImage": "./src/assets/pregnantWomenHomePage2.png",
+        "foregroundImage": "./src/assets/icon.png",
         "backgroundColor": "#ffffff"
       },
       "package": "com.BO3.birthmake"

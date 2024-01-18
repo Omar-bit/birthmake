@@ -36,7 +36,7 @@ https://www.mayoclinic.org/healthy-lifestyle/pregnancy-week-by-week/in-degree/la
 `,
       ],
     },
-    video: `require('./assets/video1.mp4')`,
+    video: 'https://innovibe.tech/ani/Pool-1.webm',
   },
 
   {
@@ -107,7 +107,7 @@ La surveillance rapprochée de la mère est recommandée pendant les deux heures
 `,
       ],
     },
-    video: `require('./assets/video1.mp4')`,
+    video: 'https://innovibe.tech/ani/Accouchement-1.mp4',
   },
 
   {
@@ -137,7 +137,7 @@ Au CHU Farhat Hached, nous nous engageons à vous offrir les meilleures options 
 `,
       ],
     },
-    video: `require('./assets/video1.mp4')`,
+    video: 'https://innovibe.tech/ani/Préaccouchement-1.webm',
   },
   {
     id: 3,
@@ -170,7 +170,7 @@ Parmi ces instruments, le forceps, utilisé dans plus de 20,9% des accouchements
 `,
       ],
     },
-    video: `require('./assets/video1.mp4')`,
+    video: 'https://innovibe.tech/ani/Mfaggsa-1.webm',
   },
 
   {
@@ -192,7 +192,7 @@ Parmi ces instruments, le forceps, utilisé dans plus de 20,9% des accouchements
 `,
       ],
     },
-    video: `require('./assets/video1.mp4')`,
+    video: 'https://innovibe.tech/ani/Mettekya-1.webm',
   },
   {
     id: 5,
@@ -215,7 +215,7 @@ Parmi ces instruments, le forceps, utilisé dans plus de 20,9% des accouchements
       ],
     },
 
-    video: `require('./assets/video1.mp4')`,
+    video: 'https://innovibe.tech/ani/Soutien-1(1).webm',
   },
   {
     id: 6,
@@ -236,7 +236,7 @@ Parmi ces instruments, le forceps, utilisé dans plus de 20,9% des accouchements
 `,
       ],
     },
-    video: `require('./assets/video1.mp4')`,
+    video: false,
   },
   {
     id: 7,
@@ -255,7 +255,7 @@ Parmi ces instruments, le forceps, utilisé dans plus de 20,9% des accouchements
 `,
       ],
     },
-    video: `require('./assets/video1.mp4')`,
+    video: 'https://innovibe.tech/ani/Soutien-1(1).webm',
   },
   {
     id: 8,
@@ -263,13 +263,8 @@ Parmi ces instruments, le forceps, utilisé dans plus de 20,9% des accouchements
     ar: {
       title: 'لحظات الاولى مع طفلك ',
       content: [
-        `في الساعات الأولى، ماذا يحدث في غرفة الولادة؟ بعد الولادة، ستبقى أنتِ وطفلك في غرفة الولادة. هذه هي المرة الأولى التي ستكونان فيها معًا! بينما تتعرفين على طفلك وتقومين ببناء الروابط، سيقوم العاملون الصحيون بإجراء المراقبة اللازمة. تستغرق هذه المرحلة على الأقل ساعتين وهي تهدف إلى التحقق من عدم وجود نزيف وضمان تكيف جيد لطفلك مع البيئة الجديدة. قد يتم عرض إرضاع أولى إذا كنتِ قد اخترتِ إرضاع طفلك. في نهاية الساعتين، بعد التحقق النهائي من قبل القابلة، يمكنكِ مغادرة غرفة الولادة.
-
-`,
-        `الجلد مع الجلد كما يوحي اسمه، يتعلق الأمر بوضع طفلك عارياً بجوارك، حيث تكون بشرتك تلامس بشرته. هذا الاتصال الجسدي الأول يساعد على تعزيز تكوين رابطة بينك وبين طفلك. يتم تنفيذه فور الولادة إذا لم يكن طفلك في حاجة إلى أي رعاية فورية. إنه لحظة فريدة من نوعها تعود بالنفع على الطفل والأم. يمكن للأب أيضاً أداء الجلد مع الجلد. يمكنك من خلاله مساعدة طفلك في استقرار حرارته ومعدل ضربات قلبه، وتعزيز شعوره بالرفاهية. إذا كنتِ ترغبين في الرضاعة، فإنه أيضاً خلال الجلد مع الجلد يتم وضع طفلك على الثدي لأول مرة.
-
-
-`,
+        `في الساعات الأولى، ماذا يحدث في غرفة الولادة؟ بعد الولادة، ستبقى أنتِ وطفلك في غرفة الولادة. هذه هي المرة الأولى التي ستكونان فيها معًا! بينما تتعرفين على طفلك وتقومين ببناء الروابط، سيقوم العاملون الصحيون بإجراء المراقبة اللازمة. تستغرق هذه المرحلة على الأقل ساعتين وهي تهدف إلى التحقق من عدم وجود نزيف وضمان تكيف جيد لطفلك مع البيئة الجديدة. قد يتم عرض إرضاع أولى إذا كنتِ قد اخترتِ إرضاع طفلك. في نهاية الساعتين، بعد التحقق النهائي من قبل القابلة، يمكنكِ مغادرة غرفة الولادة.`,
+        `الجلد مع الجلد كما يوحي اسمه، يتعلق الأمر بوضع طفلك عارياً بجوارك، حيث تكون بشرتك تلامس بشرته. هذا الاتصال الجسدي الأول يساعد على تعزيز تكوين رابطة بينك وبين طفلك. يتم تنفيذه فور الولادة إذا لم يكن طفلك في حاجة إلى أي رعاية فورية. إنه لحظة فريدة من نوعها تعود بالنفع على الطفل والأم. يمكن للأب أيضاً أداء الجلد مع الجلد. يمكنك من خلاله مساعدة طفلك في استقرار حرارته ومعدل ضربات قلبه، وتعزيز شعوره بالرفاهية. إذا كنتِ ترغبين في الرضاعة، فإنه أيضاً خلال الجلد مع الجلد يتم وضع طفلك على الثدي لأول مرة.`,
         `متى نغادر المستشفى؟ يتم تعديل مدة الإقامة في المستشفى بناءً على احتياجات الأم والطفل بشكل متزايد. عمومًا، يتم قضاء مدة تتراوح بين 2 و 4 أيام في المستشفى بعد ولادة طبيعية ويضاف يوم واحد إذا كان هناك عملية قيصرية. إذا كان كل شيء على ما يرام، وإذا سمحت حالة صحتك ووزن طفلك، فيمكنك طلب من الفريق الطبي مغادرة المستشفى في وقت أبكر. ستقوم القابلة بزيارتك الأولى في المنزل خلال 24 ساعة من مغادرتك المستشفى. على الجانب المقابل، يمكن أن يُشجع عليك بالبقاء لفترة أطول في المستشفى، خاصة إذا كنت تشعرين بالضعف، أو بعدم وجود أفراد عائلتك بالقرب منك، أو إذا كانت هناك مضاعفات تتطلب مراقبة لفترة أطول.
 `,
       ],
@@ -289,6 +284,6 @@ Après l'accouchement, votre bébé et vous allez rester en salle de travail (ou
 `,
       ],
     },
-    video: `require('./assets/video1.mp4')`,
+    video: 'https://innovibe.tech/ani/HoldingBaby-1.webm',
   },
 ];

@@ -18,6 +18,11 @@
     "preview3": {
       "developmentClient": true
     },
-    "production": {}
+    "production": {},
+    "androidapk": {
+      "android": {
+        "buildType": "apk"
+      }
+    }
   }
 }

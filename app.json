@@ -1,32 +1,30 @@
 {
   "expo": {
-    "name": "birthmake",
+    "name": "birthmate",
     "slug": "birthmake",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "orientation": "portrait",
-    "icon": "./assets/icon.png",
+    "icon": "./src/assets/icon.png",
     "userInterfaceStyle": "light",
     "splash": {
-      "image": "./assets/splash.png",
+      "image": "./src/assets/pregnantWomenHomePage2.png",
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
-    "assetBundlePatterns": [
-      "**/*"
-    ],
+    "assetBundlePatterns": ["**/*"],
     "ios": {
       "supportsTablet": true,
-      "bundleIdentifier": "com.bo3.birthmake"
+      "bundleIdentifier": "com.BO3.birthmake"
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./assets/favicon.png",
+        "foregroundImage": "./src/assets/pregnantWomenHomePage2.png",
         "backgroundColor": "#ffffff"
       },
-      "package": "com.bo3.birthmake"
+      "package": "com.BO3.birthmake"
     },
     "web": {
-      "favicon": "./assets/favicon.png"
+      "favicon": "./src/assets/icon.png"
     },
     "extra": {
       "eas": {

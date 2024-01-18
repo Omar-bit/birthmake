@@ -1,9 +1,19 @@
-import { View, Text, Image, TouchableOpacity, ScrollView } from 'react-native';
+import {
+  View,
+  Text,
+  Image,
+  TouchableOpacity,
+  ScrollView,
+  Linking,
+} from 'react-native';
 import React from 'react';
 import data from '../data';
 import { AntDesign } from '@expo/vector-icons';
 import { ResizeMode } from 'expo-av';
 import VideoPlayer from 'expo-video-player';
+
+//import { ResizeMode } from 'expo-av';
+//import VideoPlayer from 'expo-video-player';
 import { UserContext } from '../../App';
 const Article = ({ route, navigation }) => {
   const { lang } = React.useContext(UserContext);
@@ -48,23 +58,39 @@ const Article = ({ route, navigation }) => {
           </Text>
         </View>
         <ScrollView className='h-[90vh]  p-2 '>
-          {data[idArticle[0]].video ? (
+          {data[idArticle[0]].video != false ? (
             <View className='h-[30vh] w-[100%] mx-auto overflow-hidden flex  justify-center items-center rounded-xl  '>
-              <VideoPlayer
-                defaultControlsVisible={true}
+              {/*       <VideoPlayer
                 defaultControlsVisible={true}
                 slider={true}
                 videoProps={{
                   resizeMode: ResizeMode.CONTAIN,
-                  shouldPlay: false,
+                  shouldPlay: true,
+                  source: { uri:  data[idArticle[0]].video},
+                }}
+              />*/}
+
+              <VideoPlayer
+                videoProps={{
+                  shouldPlay: true,
+                  resizeMode: ResizeMode.CONTAIN,
 
                   source: {
-                    uri: 'http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4',
+                    uri: data[idArticle[0]].video,
                   },
                 }}
               />
             </View>
-          ) : null}
+          ) : (
+            <TouchableOpacity
+              className=' bg-primary rounded-md p-5 mx-auto'
+              onPress={() => Linking.openURL('https://youtu.be/LbkACPuEKpg')}
+            >
+              <Text className='font-bold text-lg'>
+                faire la visite virtuelle
+              </Text>
+            </TouchableOpacity>
+          )}
           <Text className='text-[16px]'>
             {data[idArticle[0]][lang].content[idArticle[1]]}
           </Text>

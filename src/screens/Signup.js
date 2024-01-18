@@ -50,6 +50,7 @@ const Signup = ({ navigation }) => {
         text1: 'Echec de connection',
         text2: 'email invalid',
       });
+      return;
     }
     if (!password || password.length < 8) {
       Toast.show({
@@ -57,6 +58,7 @@ const Signup = ({ navigation }) => {
         text1: 'Echec de crée votre compte',
         text2: 'le mot de password doit etre composé minimum par 8 caractères',
       });
+      return;
     }
     try {
       const res = await createUserWithEmailAndPassword(auth, email, password);
@@ -73,7 +75,7 @@ const Signup = ({ navigation }) => {
       Toast.show({
         type: 'error',
         text1: 'Echec de crée votre compte',
-        text2: 'testing',
+        text2: error.message,
       });
     }
   }
